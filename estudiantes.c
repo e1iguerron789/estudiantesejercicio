@@ -1,18 +1,37 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-int main()
-{
-    int filas=23;
-    int columnas=3;
-    srand(time(NULL))
-  int matriz[filas][columnas];
 
-   for (int i = 0; i < filas; i++) {
-        for (int j = 0; j < columnas; j++) {
-             matriz[i][j]= rand()%11;
+
+
+void mostrar(int matriz[23][3]) {
+    printf("Estudiantes:\n");
+    for (int i = 0; i < 23;i++){
+        printf("%d  ",i);
+        for (int j = 0; j < 3;j++){
+           
+            printf("%d    ",matriz[i][j]);
+        }
+        
+         printf("\n");
+    }
+}
+
+int main() {
+    
+    
+
+    srand(time(NULL)); 
+
+    int matriz[23][3];
+
+    for (int i = 0; i < 23; i++) {
+        for (int j = 0; j < 3; j++) {
+            matriz[i][j] = rand()%11;
         }
     }
- 
-return 0;
+   
+    mostrar(matriz);
+
+    return 0;
 }
